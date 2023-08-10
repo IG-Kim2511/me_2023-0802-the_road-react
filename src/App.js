@@ -1,5 +1,6 @@
 import React from 'react'
 import Navbar from './components/Navbar'
+import Header from './components/Header'
 
 
 
@@ -7,9 +8,11 @@ import Navbar from './components/Navbar'
 
 const App = () => {
   return (
-    <div>App
+    <div className='container'>
+    
     
         <Navbar/>
+        <Header/>
     
     </div>
   )
