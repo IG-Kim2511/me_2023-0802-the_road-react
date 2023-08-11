@@ -56,6 +56,9 @@
   /* T */
   text-decoration: none;
   box-sizing: border-box;
+
+  transition: all 0.2s linear;   
+  
   outline: none;
 }
 /* T */

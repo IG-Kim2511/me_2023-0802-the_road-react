@@ -51,9 +51,9 @@
     position: fixed;
     left: 0;
     /* CSS 38. js 06 */
-    bottom: -100%;
-    opacity: 0;
-  
+    /* bottom: -100%;
+        opacity: 0;
+    */
     z-index: 300;
     /* opacity: 0.9; */
     /* T: CSS 28 : container와 크기 똑같이 맞추기*/
@@ -130,9 +130,9 @@
   
     /* CSS 38. js 06 */
     position: relative;
-    top: -100%;
+    /* top: -100%; */
     /* CSS 36 */
-    transition: all 0.3s;
+    /* transition: all 0.3s; */
   }
   /* CSS 38. js 06 */
   .change .nav-link {
