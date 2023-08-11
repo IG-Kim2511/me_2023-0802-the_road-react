@@ -5,15 +5,21 @@ import img_river from '../assets/river.jpg'
 import img_sea from '../assets/sea.jpg'
 
 const PopularTours = () => {
+
+ /* 🍀react 02 - js방식 , parentElement */
+    const handleNavButtonClick = (event) => {
+        const parentElement = event.currentTarget.parentElement.parentElement;
+        parentElement.classList.toggle("change");
+      };
+
     
     /* 🍀react 02 */
-    const [iszIndex, setIszIndex] = useState(false)
-    
+    const [iszIndex1, setIszIndex1] = useState(false)
 
     const styleZIndex = {  
           transform: 'translateZ(-5rem) translateX(3rem)',
             boxShadow: '0 2rem 4rem #777',
-            opacity: 0.5,
+            opacity: 0.1,
             zIndex: 0,
         }
  
@@ -29,7 +35,8 @@ const PopularTours = () => {
           days: 7,
           people: 20,
           guides: 4,
-          diffi: 'medium'
+          diffi: 'medium',
+          price: 499
         },
         {
           img: img_river,
@@ -37,7 +44,8 @@ const PopularTours = () => {
           days: 2,
           people: 44,
           guides: 1,
-          diffi: 'medium'
+          diffi: 'medium',
+          price: 299
         },
         {
           img: img_sea,
@@ -45,9 +53,14 @@ const PopularTours = () => {
           days: 4,
           people: 55,
           guides: 8,
-          diffi: 'easy'
+          diffi: 'easy',
+          price: 399
         },
       ]; 
+
+ 
+
+
     
   return (
     <div>
@@ -57,9 +70,9 @@ const PopularTours = () => {
         <h1 className="popular-tours-heading">The Most Popular Tours</h1>
 
         <div className="cards-wrapper">
-          {items.map((item, i) => (
+          {items.map((item, i) => (            
             <div className="card" key={i}>
-              <div className="front-side" style={iszIndex ? styleZIndex : null}>
+              <div className="front-side" style={iszIndex1 ? styleZIndex : null}>
                 {/* Replace 'img' with 'item.img' */}
                 <img src={item.img} alt={item.named} className="card-image" />
                 {/* Use 'item.named' */}
@@ -72,11 +85,15 @@ const PopularTours = () => {
                   <li className="card-list-item">Sleep in private tents</li>
                   <li className="card-list-item">Difficulty: {item.diffi}</li>
                 </ul>
-                <button className="navigation-button" onClick={() => setIszIndex(!iszIndex)}>price &gt;&gt;</button>
-              </div>
+                {/* <button className="navigation-button" onClick={() => setIszIndex1(!iszIndex1)}>price &gt;&gt;</button> */}
+                <button className="navigation-button"  onClick={handleNavButtonClick}>price &gt;&gt;</button>
+              
+                
+              
+                </div>
               <div className="back-side center">
-                <button className="navigation-button" onClick={() => setIszIndex(!iszIndex)}>&lt;&lt; back</button>
-                <h3 className="tour-price">$399</h3>
+                <button className="navigation-button" onClick={handleNavButtonClick}>&lt;&lt; back</button>
+                <h3 className="tour-price">${item.price}</h3>
                 <button className="card-button">Booking</button>
               </div>
             </div>
