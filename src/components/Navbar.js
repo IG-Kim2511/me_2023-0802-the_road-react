@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import "./Navbar.css"
 
 import navbarBg from '../assets/navbar-bg.jpg'
-import { styled } from 'styled-components'
+import { keyframes, styled } from 'styled-components'
+import { CSSTransition } from 'react-transition-group'
 
 const Navbar = () => {
 
@@ -11,32 +12,27 @@ const Navbar = () => {
     background: `url(${navbarBg})`
   }
   
-
   const [toggle, setToggle] = useState(false)
   console.log(toggle)
   
-
-  
-  const NavLink = styled.div`
-        transition: all 3s ease;       
+   const bounceAnimation = keyframes`
+  0% {
+    top: -100%;
+  }
+  50% {
+    top: 0;
+  }
   `;
 
-
-  // const StyledButton = styled.button`
-  //     padding: 10px 20px;
-  //     background-color: #3498db;
-  //     color: white;
-  //     border: none;
-  //     cursor: pointer;
-  //     transition: background-color 3s ease; /* Specify the property to transition */
-
-  //     &:hover {
-  //       background-color: red; /* New value for the property */
-  //     }
-  //   `;
+const NavLink = styled.div`
+  /* transition: all 30s ease;        */
+  animation: ${bounceAnimation} 5s ease ;
+`;
 
 
-  return (
+
+
+return (
     <div>
   {/*      [navbar] 
        CSS 26 : center 
@@ -45,33 +41,34 @@ const Navbar = () => {
         <div className="line" ></div>
         <div className="line" ></div>
         <div className="line" ></div>
+
       </div>
 
-        {/*  [navbar wrap] 클릭해서 x모양으로 바뀔 때 */}
-        <div>
+          {/*  [navbar wrap] 클릭해서 x모양으로 바뀔 때 */}
+          <div>
 
-          {
-            toggle?          
-            <div className="navbar-wrapper">
-              <nav className="navbar" style={styleNavbar}>
-            {/*      CSS 26 : center  */}
-                <div className="close-navbar-icon navbar-icon center" onClick={()=>{setToggle(!toggle)}}>
-                  <div className="line line-1"></div>
-                  <div className="line line-2"></div>
-                </div>
-            {/*      js 04  */}
-                <NavLink className="nav-list">
-                  <a href="#" className="nav-link center">Home</a>
-                  <a href="#" className="nav-link center">Tours</a>
-                  <a href="#" className="nav-link center">About us</a>
-                  <a href="#" className="nav-link center">Offer</a>
-                  <a href="#" className="nav-link center">Contact</a>
-                </NavLink>
-              </nav>
-            </div>
-            :null
-          }
-      
+            {
+              toggle?          
+              <div className="navbar-wrapper">
+                <nav className="navbar" style={styleNavbar}>
+              {/*      CSS 26 : center  */}
+                  <div className="close-navbar-icon navbar-icon center" onClick={()=>{setToggle(!toggle)}}>
+                    <div className="line line-1"></div>
+                    <div className="line line-2"></div>
+                  </div>
+              {/*      js 04  */}
+                  <NavLink className="nav-list">
+                    <a href="#" className="nav-link center" onClick={()=>{setToggle(!toggle)}}>Home</a>
+                    <a href="#" className="nav-link center" onClick={()=>{setToggle(!toggle)}}>Tours</a>
+                    <a href="#" className="nav-link center" onClick={()=>{setToggle(!toggle)}}>About us</a>
+                    <a href="#" className="nav-link center" onClick={()=>{setToggle(!toggle)}}>Offer</a>
+                    <a href="#" className="nav-link center" onClick={()=>{setToggle(!toggle)}}>Contact</a>
+                  </NavLink>
+                </nav>
+              </div>
+              :null
+            }
+        
         </div>
     </div>
   )
