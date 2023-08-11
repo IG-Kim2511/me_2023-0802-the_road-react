@@ -147,7 +147,7 @@
   
   /* CSS 40 */
   /*T: top에서 내려오는 속도 (duration) + delay, opacity 적용되는 속도, color delay*/
-  .change .nav-link:nth-child(1) {
+/*   .change .nav-link:nth-child(1) {
     transition: top 1s 0.4s, opacity 0.3s, #845EC2 0.3s;
   }
   
@@ -166,7 +166,7 @@
   .change .nav-link:nth-child(5) {
     transition: top 1s 1.2s, opacity 0.3s, #FF8066 0.3s;
   }
-
+ */
   /* ~~~~ */
   .nav-link:nth-child(1) {
     background: #845EC2;
@@ -189,6 +189,6 @@
   }
   
  .nav-link:nth-child(5) {
-    background: #FF8066;
+    background: #FF8066;  
  
   }
