@@ -7,9 +7,8 @@ import img_sea from '../assets/sea.jpg'
 const PopularTours = () => {
 
  /* 🍀react 02 - js방식 , parentElement */
-    const handleNavButtonClick = (event) => {
-        const parentElement = event.currentTarget.parentElement.parentElement;
-        parentElement.classList.toggle("change");
+    const handleNavButtonClick = (e) => {
+        e.currentTarget.parentElement.parentElement.classList.toggle("change");
       };
 
     
