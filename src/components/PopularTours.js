@@ -1,5 +1,8 @@
 import React from 'react'
 import './PopularTours.css'
+import img_forest from '../assets/forest.jpg'
+import img_river from '../assets/river.jpg'
+import img_sea from '../assets/sea.jpg'
 
 const PopularTours = () => {
   return (
@@ -10,7 +13,7 @@ const PopularTours = () => {
         <div className="cards-wrapper">
             <div className="card">
             <div className="front-side">
-                <img src="images/forest.jpg" alt="Forest" className="card-image" />
+                <img src={img_forest} alt="Forest" className="card-image" />
                 <h1 className="tour-name">The wild forest</h1>
                 <ul className="card-list">
                 <li className="card-list-item">7 days tour</li>
@@ -29,7 +32,7 @@ const PopularTours = () => {
             </div>
             <div className="card">
             <div className="front-side">
-                <img src="images/river.jpg" alt="River" className="card-image" />
+                <img src={img_river} alt="River" className="card-image" />
                 <h1 className="tour-name">Along the river</h1>
                 <ul className="card-list">
                 <li className="card-list-item">9 days tour</li>
@@ -48,7 +51,7 @@ const PopularTours = () => {
             </div>
             <div className="card">
             <div className="front-side">
-                <img src="images/sea.jpg" alt="Sea" className="card-image" />
+                <img src={img_sea} alt="Sea" className="card-image" />
                 <h1 className="tour-name">The island beach</h1>
                 <ul className="card-list">
                 <li className="card-list-item">5 days tour</li>

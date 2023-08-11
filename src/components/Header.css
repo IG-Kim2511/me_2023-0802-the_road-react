@@ -112,7 +112,7 @@
   .header-image {
     width: 35%;
     /* keyframe */
-    animation: image-float 20s infinite;
+    animation: image-float 3s infinite;
   }
   
   /* css 02 */

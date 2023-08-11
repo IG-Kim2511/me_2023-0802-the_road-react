@@ -1,14 +1,14 @@
 
 /* <Popular tours> */
 .popular-tours {
-    padding: 5rem 0 10rem 0;
+    padding: 2rem 0 4rem 0;
   }
   .popular-tours-heading {
-    font-size: 8rem;
+    font-size: 4rem;
     text-align: center;
-    margin-bottom: 8rem;
+    margin-bottom: 2rem;
     color: var(--primary-color);
-    text-shadow: 1rem 2rem 0.5rem red;
+    text-shadow: .1rem .2rem .5rem grey;
   }
   
   .cards-wrapper {
