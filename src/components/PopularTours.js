@@ -10,23 +10,20 @@ const PopularTours = () => {
     const [iszIndex, setIszIndex] = useState(false)
     
 
-    const igloo = {  
+    const styleZIndex = {  
           transform: 'translateZ(-5rem) translateX(3rem)',
             boxShadow: '0 2rem 4rem #777',
             opacity: 0.5,
             zIndex: 0,
         }
-
-    const back ={
-        transform: 'translateZ(0) translateX(0)',
-        boxShadow: '0 0.5rem 2rem #aaa',
-        opacity: 0.9,
-        zIndex: 1,
-    }
-    
+ 
     const items = [
         {
-        //   img: "img_forest",
+        /*
+            🦄react databinding image that imported from map loop with object
+            "", {}으로 감쌀필요없이. img: img_forest, 이렇게 담백하게 데이터 만들면 됨 
+        */
+
           img: img_forest,
           named: 'forest',
           days: 7,
@@ -50,22 +47,19 @@ const PopularTours = () => {
           guides: 8,
           diffi: 'easy'
         },
-      ];
-        
+      ]; 
     
-
-
   return (
     <div>
      
         <section className="popular-tours">
-        
+
         <h1 className="popular-tours-heading">The Most Popular Tours</h1>
 
         <div className="cards-wrapper">
           {items.map((item, i) => (
             <div className="card" key={i}>
-              <div className="front-side" style={iszIndex ? igloo : null}>
+              <div className="front-side" style={iszIndex ? styleZIndex : null}>
                 {/* Replace 'img' with 'item.img' */}
                 <img src={item.img} alt={item.named} className="card-image" />
                 {/* Use 'item.named' */}
