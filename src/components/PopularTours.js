@@ -57,51 +57,44 @@ const PopularTours = () => {
           price: 399
         },
       ]; 
-
- 
-
-
     
   return (
     <div>
      
         <section className="popular-tours">
 
-        <h1 className="popular-tours-heading">The Most Popular Tours</h1>
+            <h1 className="popular-tours-heading">The Most Popular Tours</h1>
 
-        <div className="cards-wrapper">
-          {items.map((item, i) => (            
-            <div className="card" key={i}>
-              <div className="front-side" style={iszIndex1 ? styleZIndex : null}>
-                {/* Replace 'img' with 'item.img' */}
-                <img src={item.img} alt={item.named} className="card-image" />
-                {/* Use 'item.named' */}
-                <h1 className="tour-name">{item.named}</h1>
-                <ul className="card-list">
-                  {/* Use 'item.days', 'item.people', etc. */}
-                  <li className="card-list-item">{item.days} days tour</li>
-                  <li className="card-list-item">Up to {item.people} people</li>
-                  <li className="card-list-item">{item.guides} tour guides</li>
-                  <li className="card-list-item">Sleep in private tents</li>
-                  <li className="card-list-item">Difficulty: {item.diffi}</li>
-                </ul>
-                {/* <button className="navigation-button" onClick={() => setIszIndex1(!iszIndex1)}>price &gt;&gt;</button> */}
-                <button className="navigation-button"  onClick={handleNavButtonClick}>price &gt;&gt;</button>
-              
+            <div className="cards-wrapper">
+            {items.map((item, i) => (            
+                <div className="card" key={i}>
+                <div className="front-side" style={iszIndex1 ? styleZIndex : null}>
+                    
+                    <img src={item.img} alt={item.named} className="card-image" />
+                   
+                    <h1 className="tour-name">{item.named}</h1>
+                    <ul className="card-list">
+                    
+                    <li className="card-list-item">{item.days} days tour</li>
+                    <li className="card-list-item">Up to {item.people} people</li>
+                    <li className="card-list-item">{item.guides} tour guides</li>
+                    <li className="card-list-item">Sleep in private tents</li>
+                    <li className="card-list-item">Difficulty: {item.diffi}</li>
+                    </ul>
+                    {/* <button className="navigation-button" onClick={() => setIszIndex1(!iszIndex1)}>price &gt;&gt;</button> */}
+                    <button className="navigation-button"  onClick={handleNavButtonClick}>price &gt;&gt;</button>
                 
-              
+                    
+                
                 </div>
-              <div className="back-side center">
-                <button className="navigation-button" onClick={handleNavButtonClick}>&lt;&lt; back</button>
-                <h3 className="tour-price">${item.price}</h3>
-                <button className="card-button">Booking</button>
-              </div>
+                <div className="back-side center">
+                    <button className="navigation-button" onClick={handleNavButtonClick}>&lt;&lt; back</button>
+                    <h3 className="tour-price">${item.price}</h3>
+                    <button className="card-button">Booking</button>
+                </div>
+                </div>
+            ))}
             </div>
-          ))}
-
-
-
-        </div>
         </section> 
     </div>
   )
