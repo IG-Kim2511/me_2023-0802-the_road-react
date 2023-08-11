@@ -5,6 +5,7 @@ import PopularTours from './components/PopularTours'
 import Test from './Test'
 import Storys from './components/Storys'
 import Contact from './components/Contact'
+import Footer from './components/Footer'
 
 
 
@@ -20,6 +21,7 @@ const App = () => {
         <PopularTours/>
         <Storys/>
         <Contact/>
+        <Footer/>
     
         {/* <Test/> */}
     </div>
