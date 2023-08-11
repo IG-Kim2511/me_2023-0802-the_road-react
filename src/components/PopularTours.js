@@ -1,73 +1,95 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './PopularTours.css'
 import img_forest from '../assets/forest.jpg'
 import img_river from '../assets/river.jpg'
 import img_sea from '../assets/sea.jpg'
 
 const PopularTours = () => {
+    
+    /* 🍀react 02 */
+    const [iszIndex, setIszIndex] = useState(false)
+    
+
+    const igloo = {  
+          transform: 'translateZ(-5rem) translateX(3rem)',
+            boxShadow: '0 2rem 4rem #777',
+            opacity: 0.5,
+            zIndex: 0,
+        }
+
+    const back ={
+        transform: 'translateZ(0) translateX(0)',
+        boxShadow: '0 0.5rem 2rem #aaa',
+        opacity: 0.9,
+        zIndex: 1,
+    }
+    
+    const items = [
+        {
+        //   img: "img_forest",
+          img: img_forest,
+          named: 'forest',
+          days: 7,
+          people: 20,
+          guides: 4,
+          diffi: 'medium'
+        },
+        {
+          img: img_river,
+          named: 'river',
+          days: 2,
+          people: 44,
+          guides: 1,
+          diffi: 'medium'
+        },
+        {
+          img: img_sea,
+          named: 'sea',
+          days: 4,
+          people: 55,
+          guides: 8,
+          diffi: 'easy'
+        },
+      ];
+        
+    
+
+
   return (
     <div>
      
         <section className="popular-tours">
+        
         <h1 className="popular-tours-heading">The Most Popular Tours</h1>
+
         <div className="cards-wrapper">
-            <div className="card">
-            <div className="front-side">
-                <img src={img_forest} alt="Forest" className="card-image" />
-                <h1 className="tour-name">The wild forest</h1>
+          {items.map((item, i) => (
+            <div className="card" key={i}>
+              <div className="front-side" style={iszIndex ? igloo : null}>
+                {/* Replace 'img' with 'item.img' */}
+                <img src={item.img} alt={item.named} className="card-image" />
+                {/* Use 'item.named' */}
+                <h1 className="tour-name">{item.named}</h1>
                 <ul className="card-list">
-                <li className="card-list-item">7 days tour</li>
-                <li className="card-list-item">Up to 20 people</li>
-                <li className="card-list-item">4 tour guides</li>
-                <li className="card-list-item">Sleep in private tents</li>
-                <li className="card-list-item">Difficulty: medium</li>
+                  {/* Use 'item.days', 'item.people', etc. */}
+                  <li className="card-list-item">{item.days} days tour</li>
+                  <li className="card-list-item">Up to {item.people} people</li>
+                  <li className="card-list-item">{item.guides} tour guides</li>
+                  <li className="card-list-item">Sleep in private tents</li>
+                  <li className="card-list-item">Difficulty: {item.diffi}</li>
                 </ul>
-                <button className="navigation-button">price &gt;&gt;</button>
-            </div>
-            <div className="back-side center">
-                <button className="navigation-button">&lt;&lt; back</button>
+                <button className="navigation-button" onClick={() => setIszIndex(!iszIndex)}>price &gt;&gt;</button>
+              </div>
+              <div className="back-side center">
+                <button className="navigation-button" onClick={() => setIszIndex(!iszIndex)}>&lt;&lt; back</button>
                 <h3 className="tour-price">$399</h3>
                 <button className="card-button">Booking</button>
+              </div>
             </div>
-            </div>
-            <div className="card">
-            <div className="front-side">
-                <img src={img_river} alt="River" className="card-image" />
-                <h1 className="tour-name">Along the river</h1>
-                <ul className="card-list">
-                <li className="card-list-item">9 days tour</li>
-                <li className="card-list-item">Up to 30 people</li>
-                <li className="card-list-item">7 tour guides</li>
-                <li className="card-list-item">Sleep in private tents</li>
-                <li className="card-list-item">Difficulty: hard</li>
-                </ul>
-                <button className="navigation-button">price &gt;&gt;</button>
-            </div>
-            <div className="back-side center">
-                <button className="navigation-button">&lt;&lt; back</button>
-                <h3 className="tour-price">$499</h3>
-                <button className="card-button">Booking</button>
-            </div>
-            </div>
-            <div className="card">
-            <div className="front-side">
-                <img src={img_sea} alt="Sea" className="card-image" />
-                <h1 className="tour-name">The island beach</h1>
-                <ul className="card-list">
-                <li className="card-list-item">5 days tour</li>
-                <li className="card-list-item">Up to 40 people</li>
-                <li className="card-list-item">8 tour guides</li>
-                <li className="card-list-item">Sleep in hotel</li>
-                <li className="card-list-item">Difficulty: easy</li>
-                </ul>
-                <button className="navigation-button">price &gt;&gt;</button>
-            </div>
-            <div className="back-side center">
-                <button className="navigation-button">&lt;&lt; back</button>
-                <h3 className="tour-price">$599</h3>
-                <button className="card-button">Booking</button>
-            </div>
-            </div>
+          ))}
+
+
+
         </div>
         </section> 
     </div>
@@ -75,3 +97,85 @@ const PopularTours = () => {
 }
 
 export default PopularTours
+
+
+
+// 🍀delete code
+
+// <div className="card" >    
+
+// <div className="front-side" style={
+//     iszIndex
+//     ?igloo
+//     :null}>
+
+//     <img src={img_forest} alt="Forest" className="card-image" />
+//     <h1 className="tour-name">The wild forest</h1>
+//     <ul className="card-list">
+//     <li className="card-list-item">7 days tour</li>
+//     <li className="card-list-item">Up to 20 people</li>
+//     <li className="card-list-item">4 tour guides</li>
+//     <li className="card-list-item">Sleep in private tents</li>
+//     <li className="card-list-item">Difficulty: medium</li>
+//     </ul>
+// {/* 🍀react 02  */}
+//     {/* <button className="navigation-button">price &gt;&gt;</button> */}
+//     <button className="navigation-button" onClick={()=>{setIszIndex(!iszIndex)}}>price &gt;&gt;</button>
+// </div>
+
+// <div className="back-side center">
+//      {/* 🍀react 02  */}
+//     {/* <button className="navigation-button">&lt;&lt; back</button> */}
+//     <button className="navigation-button" onClick={()=>{setIszIndex(!iszIndex)}}>&lt;&lt; back</button>
+
+//     <h3 className="tour-price">$399</h3>
+//     <button className="card-button">Booking</button>
+// </div>
+
+// </div>
+
+
+
+// <div className="card">
+// <div className="front-side">
+//     <img src={img_river} alt="River" className="card-image" />
+//     <h1 className="tour-name">Along the river</h1>
+//     <ul className="card-list">
+//     <li className="card-list-item">9 days tour</li>
+//     <li className="card-list-item">Up to 30 people</li>
+//     <li className="card-list-item">7 tour guides</li>
+//     <li className="card-list-item">Sleep in private tents</li>
+//     <li className="card-list-item">Difficulty: hard</li>
+//     </ul>
+//     <button className="navigation-button" onClick={()=>{setIszIndex(!iszIndex)}}>price &gt;&gt;</button>
+// </div>
+// <div className="back-side center">
+// <button className="navigation-button" onClick={()=>{setIszIndex(!iszIndex)}}>&lt;&lt; back</button>
+
+//     <h3 className="tour-price">$499</h3>
+//     <button className="card-button">Booking</button>
+// </div>
+// </div>
+
+// <div className="card">
+// <div className="front-side">
+//     <img src={img_sea} alt="Sea" className="card-image" />
+//     <h1 className="tour-name">The island beach</h1>
+//     <ul className="card-list">
+//     <li className="card-list-item">5 days tour</li>
+//     <li className="card-list-item">Up to 40 people</li>
+//     <li className="card-list-item">8 tour guides</li>
+//     <li className="card-list-item">Sleep in hotel</li>
+//     <li className="card-list-item">Difficulty: easy</li>
+//     </ul>
+//     <button className="navigation-button" onClick={()=>{setIszIndex(!iszIndex)}}>price &gt;&gt;</button>
+// </div>
+
+// <div className="back-side center">
+
+// <button className="navigation-button" onClick={()=>{setIszIndex(!iszIndex)}}>&lt;&lt; back</button>
+
+//     <h3 className="tour-price">$599</h3>
+//     <button className="card-button">Booking</button>
+// </div>
+// </div>
