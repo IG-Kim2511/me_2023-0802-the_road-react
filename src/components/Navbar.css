@@ -51,9 +51,9 @@
     position: fixed;
     left: 0;
     /* CSS 38. js 06 */
-    /* bottom: -100%;
+    bottom: -100%;
         opacity: 0;
-    */
+   
     z-index: 300;
     /* opacity: 0.9; */
     /* T: CSS 28 : container와 크기 똑같이 맞추기*/
@@ -64,6 +64,7 @@
     transition: bottom 0.5s, opacity 0.2s;
   }
   
+
   /* CSS 38. js 06 */
   /* navbar-icon클릭할때 .change추가 */
   .change .navbar-wrapper {

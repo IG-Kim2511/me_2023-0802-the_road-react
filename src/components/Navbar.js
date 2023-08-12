@@ -8,27 +8,18 @@ import { CSSTransition } from 'react-transition-group'
 const Navbar = () => {
 
 
-  const styleNavbar ={
-    background: `url(${navbarBg})`
-  }
+  const styleNavbar = {
+    background: `url(${navbarBg})`,
+    bottom: '0%',
+    opacity: 1,
+
+    /* CSS 40 */
+    /* The speed of coming up from the bottom, the speed of opacity being applied, delay until being displayed */
+    transition: 'bottom 0.5s, opacity 0.2s 0.25s',
+  };
   
   const [toggle, setToggle] = useState(false)
-  console.log(toggle)
   
-   const bounceAnimation = keyframes`
-  0% {
-    top: -100%;
-  }
-  50% {
-    top: 0;
-  }
-  `;
-
-const NavLink = styled.div`
-  /* transition: all 30s ease;        */
-  animation: ${bounceAnimation} 5s ease ;
-`;
-
 
 
 
@@ -46,6 +37,10 @@ return (
 
           {/*  [navbar wrap] 클릭해서 x모양으로 바뀔 때 */}
           <div>
+      {/*     {toggle?
+            
+            :
+          } */}
 
             {
               toggle?          
@@ -57,16 +52,33 @@ return (
                     <div className="line line-2"></div>
                   </div>
               {/*      js 04  */}
-                  <NavLink className="nav-list">
+                  <div className="nav-list">
                     <a href="#" className="nav-link center" onClick={()=>{setToggle(!toggle)}}>Home</a>
                     <a href="#" className="nav-link center" onClick={()=>{setToggle(!toggle)}}>Tours</a>
                     <a href="#" className="nav-link center" onClick={()=>{setToggle(!toggle)}}>About us</a>
                     <a href="#" className="nav-link center" onClick={()=>{setToggle(!toggle)}}>Offer</a>
                     <a href="#" className="nav-link center" onClick={()=>{setToggle(!toggle)}}>Contact</a>
-                  </NavLink>
+                  </div>
                 </nav>
               </div>
-              :null
+              :
+                <div className="navbar-wrapper">
+                  <nav className="navbar" >
+                {/*      CSS 26 : center  */}
+                    <div className="close-navbar-icon navbar-icon center" onClick={()=>{setToggle(!toggle)}}>
+                      <div className="line line-1"></div>
+                      <div className="line line-2"></div>
+                    </div>
+                {/*      js 04  */}
+                    <div className="nav-list">
+                      <a href="#" className="nav-link center" onClick={()=>{setToggle(!toggle)}}>Home</a>
+                      <a href="#" className="nav-link center" onClick={()=>{setToggle(!toggle)}}>Tours</a>
+                      <a href="#" className="nav-link center" onClick={()=>{setToggle(!toggle)}}>About us</a>
+                      <a href="#" className="nav-link center" onClick={()=>{setToggle(!toggle)}}>Offer</a>
+                      <a href="#" className="nav-link center" onClick={()=>{setToggle(!toggle)}}>Contact</a>
+                    </div>
+                  </nav>
+                </div>
             }
         
         </div>

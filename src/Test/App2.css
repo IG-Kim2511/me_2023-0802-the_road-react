@@ -1,0 +1,14 @@
+.transition-effect {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    transition: top 0.3s ease-in-out;
+  }
+  
+  .transition-effect.active {
+    top: 0;
+  }
+  
