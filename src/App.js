@@ -7,6 +7,8 @@ import Storys from './components/Storys'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 
+/* 🍀추가할것
+responsive */
 
 const App = () => {
   return (
@@ -19,6 +21,7 @@ const App = () => {
         <Storys/>
         <Contact/>
         <Footer/>
+
 
     </div>
   )

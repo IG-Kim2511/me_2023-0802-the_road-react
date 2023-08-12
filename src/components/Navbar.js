@@ -25,12 +25,12 @@ return (
 
       </div>
 
-          {/*  [navbar wrap] 클릭해서 x모양으로 바뀔 때 */}
+          {/* 🦄r24 react에서의 animation적용👉css */}
           <div>
 
             {
               toggle?          
-              <div className="navbar-wrapper">
+              <div className="navbar-wrapper slide-bottom">
                 <nav className="navbar" style={styleNavbar}>
               {/*      CSS 26 : center  */}
                   <div className="close-navbar-icon navbar-icon center" onClick={()=>{setToggle(!toggle)}}>
