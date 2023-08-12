@@ -7,30 +7,11 @@ import { CSSTransition } from 'react-transition-group'
 
 const Navbar = () => {
 
-
   const styleNavbar ={
     background: `url(${navbarBg})`
   }
   
   const [toggle, setToggle] = useState(false)
-  console.log(toggle)
-  
-   const bounceAnimation = keyframes`
-  0% {
-    top: -100%;
-  }
-  50% {
-    top: 0;
-  }
-  `;
-
-const NavLink = styled.div`
-  /* transition: all 30s ease;        */
-  animation: ${bounceAnimation} 5s ease ;
-`;
-
-
-
 
 return (
     <div>
@@ -57,13 +38,13 @@ return (
                     <div className="line line-2"></div>
                   </div>
               {/*      js 04  */}
-                  <NavLink className="nav-list">
+                  <div className="nav-list">
                     <a href="#" className="nav-link center" onClick={()=>{setToggle(!toggle)}}>Home</a>
                     <a href="#" className="nav-link center" onClick={()=>{setToggle(!toggle)}}>Tours</a>
                     <a href="#" className="nav-link center" onClick={()=>{setToggle(!toggle)}}>About us</a>
                     <a href="#" className="nav-link center" onClick={()=>{setToggle(!toggle)}}>Offer</a>
                     <a href="#" className="nav-link center" onClick={()=>{setToggle(!toggle)}}>Contact</a>
-                  </NavLink> 
+                  </div> 
                 </nav>
               </div>
               :null
