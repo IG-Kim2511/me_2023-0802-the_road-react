@@ -63,7 +63,7 @@ return (
                     <a href="#" className="nav-link center" onClick={()=>{setToggle(!toggle)}}>About us</a>
                     <a href="#" className="nav-link center" onClick={()=>{setToggle(!toggle)}}>Offer</a>
                     <a href="#" className="nav-link center" onClick={()=>{setToggle(!toggle)}}>Contact</a>
-                  </NavLink>
+                  </NavLink> 
                 </nav>
               </div>
               :null
